@@ -127,8 +127,8 @@ export default function QuestionList() {
 						<AccordionContent>
 							<div dangerouslySetInnerHTML={{ __html: item[1] }}></div>
 							<Button
-								variant={"link"}
-								size={"sm"}
+								variant="link"
+								size="icon"
 								onClick={() =>
 									handleEditQuestion({
 										index: index + 1,
@@ -137,7 +137,19 @@ export default function QuestionList() {
 									})
 								}
 							>
-								edit
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 24 24"
+									width="24"
+									height="24"
+								>
+									<path
+										d="M3 17.25V21h3.75l11-11.03-3.75-3.75L3 17.25zm16.71-9.04c.39-.39.39-1.02 0-1.41l-2.54-2.54c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+										fill="none"
+										stroke="#B0BEC5"
+										stroke-width="1"
+									/>
+								</svg>
 							</Button>
 						</AccordionContent>
 					</AccordionItem>
