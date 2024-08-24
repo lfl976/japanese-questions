@@ -119,6 +119,15 @@ export default function QuestionList() {
 		setNewAnswer(obj.answer);
 	};
 
+	function playAudio(text: string) {
+		// 创建一个新的SpeechSynthesisUtterance实例
+		const utterance = new SpeechSynthesisUtterance(text);
+		// 日语
+		utterance.lang = "ja-JP";
+		// 开始朗读
+		speechSynthesis.speak(utterance);
+	}
+
 	useEffect(() => {
 		getQuestions();
 	}, []);
@@ -209,6 +218,54 @@ export default function QuestionList() {
 										stroke-linecap="round"
 										stroke-linejoin="round"
 									/>
+								</svg>
+							</Button>
+							<Button
+								variant="link"
+								size="icon"
+								onClick={() => {
+									playAudio(item[0]);
+								}}
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 24 24"
+									width="24"
+									height="24"
+								>
+									<circle
+										cx="12"
+										cy="12"
+										r="10"
+										stroke="#B0BEC5"
+										stroke-width="2"
+										fill="none"
+									/>
+									<polygon points="10,8 16,12 10,16" fill="#B0BEC5" />
+								</svg>
+							</Button>
+							<Button
+								variant="link"
+								size="icon"
+								onClick={() => {
+									playAudio(item[1]);
+								}}
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 24 24"
+									width="24"
+									height="24"
+								>
+									<circle
+										cx="12"
+										cy="12"
+										r="10"
+										stroke="#B0BEC5"
+										stroke-width="2"
+										fill="none"
+									/>
+									<polygon points="10,8 16,12 10,16" fill="#B0BEC5" />
 								</svg>
 							</Button>
 						</AccordionContent>
