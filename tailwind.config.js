@@ -1,5 +1,8 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+// 解决方法一：将 tailwind.config.js 文件改为 ESM 语法
+// 将 module.exports 替换为 ESM 格式的 export default，如下所示
+import tailwindcssAnimate from "tailwindcss-animate";
+export default {
   darkMode: ["class"],
   content: [
     './pages/**/*.{ts,tsx}',
@@ -73,5 +76,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcssAnimate],
 }
